@@ -1,216 +1,159 @@
-# 🚀 AttendX — Smart Campus Attendance Management System
+# ⚡ AttendX
+### Attendance, reimagined for the modern campus.
 
 <p align="center">
-  <img src="https://img.shields.io/badge/AttendX-Smart%20Campus%20Solution-2563EB?style=for-the-badge&logo=googleclassroom&logoColor=white" />
-  <img src="https://img.shields.io/badge/Python-3.11-3776AB?style=for-the-badge&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/FastAPI-Backend-009688?style=for-the-badge&logo=fastapi&logoColor=white" />
-  <img src="https://img.shields.io/badge/React-Frontend-61DAFB?style=for-the-badge&logo=react&logoColor=black" />
-  <img src="https://img.shields.io/badge/SQLite-Database-003B57?style=for-the-badge&logo=sqlite&logoColor=white" />
+  <img src="https://img.shields.io/badge/PLATFORM-SMART%20CAMPUS-6366F1?style=flat-square" />
+  <img src="https://img.shields.io/badge/STATUS-IN%20DEVELOPMENT-F59E0B?style=flat-square" />
+  <img src="https://img.shields.io/badge/BUILT%20WITH-OPEN%20TECHNOLOGY-10B981?style=flat-square" />
 </p>
 
 <p align="center">
-  <b>A smarter way to manage attendance, connect students and faculty, and simplify campus operations.</b>
-</p>
-
-<p align="center">
-  <a href="#-overview">Overview</a> •
-  <a href="#-features">Features</a> •
-  <a href="#-technology-stack">Tech Stack</a> •
-  <a href="#-architecture">Architecture</a> •
-  <a href="#-installation--setup">Installation</a>
+  <a href="https://github.com/kishoreb13/AttendX">Repository</a> ·
+  <a href="http://127.0.0.1:8000/docs">API Docs (Local)</a> ·
+  <a href="#getting-started">Get Started</a>
 </p>
 
 ---
 
-## 🎓 Overview
+<p align="center">
+  <b>ONE CAMPUS. THREE ROLES. ONE CONNECTED SYSTEM.</b>
+</p>
 
-**AttendX** is a full-stack Smart Campus Attendance Management System designed to modernize traditional classroom attendance.
+AttendX is a digital attendance and campus management platform that brings students, faculty, and administrators together in one centralized environment.
 
-The platform provides a centralized environment where administrators, faculty members, and students can interact with attendance-related services through role-based access.
-
-With QR-based attendance, manual attendance management, student registration, and attendance analytics, AttendX aims to make campus attendance more efficient, transparent, and accessible.
-
-### 💡 Why AttendX?
-
-Traditional attendance systems often involve manual record maintenance, time-consuming processes, and limited visibility into attendance statistics.
-
-AttendX addresses these challenges through a centralized digital platform that simplifies attendance tracking and campus-level management.
+From QR-enabled attendance sessions to student records and attendance insights, AttendX transforms everyday campus operations into a streamlined digital experience.
 
 ---
 
-## ✨ Features
+## ◈ The Experience
 
-| Feature | Description |
+<table>
+<tr>
+<td width="33%" align="center">
+
+### 🎓 Student
+
+Access attendance information, participate in attendance workflows, submit leave requests, and stay updated with campus announcements.
+
+</td>
+<td width="33%" align="center">
+
+### 🧑‍🏫 Faculty
+
+Manage attendance sessions, record student attendance, view class statistics, and organize classroom activities.
+
+</td>
+<td width="33%" align="center">
+
+### 🛡️ Administrator
+
+Manage campus users, oversee attendance records, monitor activities, and access centralized reports.
+
+</td>
+</tr>
+</table>
+
+## ◈ What Powers AttendX?
+
+**01 / Attendance Engine**
+
+- QR-based attendance sessions
+- Manual attendance recording
+- Session expiry and validation
+- Duplicate attendance prevention
+
+**02 / Campus Management**
+
+- Student and faculty management
+- Student registration
+- Timetable management
+- Leave request management
+- Campus announcements
+
+**03 / Insights & Monitoring**
+
+- Attendance analytics
+- CSV report exports
+- Low-attendance watchlist
+- Activity audit logs
+
+---
+
+## ◈ Built With Purpose
+
+| Layer | Technologies |
 |---|---|
-| 🔐 Role-Based Authentication | Separate access for administrators, faculty, and students |
-| 👨‍🎓 Student Management | Manage student information and registrations |
-| 👩‍🏫 Faculty Management | Faculty account and classroom management |
-| 📱 QR-Based Attendance | QR-enabled attendance session workflow |
-| ✍️ Manual Attendance | Record attendance manually when required |
-| 📊 Attendance Analytics | View attendance statistics and reports |
-| 📥 CSV Export | Export attendance records for reporting |
-| 🗓️ Timetable Management | Organize and manage class schedules |
-| 📨 Leave Requests | Manage student leave requests |
-| 📢 Announcements | Share important campus updates |
-| ⚠️ Defaulter Watchlist | Identify students with low attendance |
-| 📋 Audit Logs | Maintain activity records for accountability |
+| Interface | React.js, Vite, JavaScript, HTML, CSS |
+| Application Server | Python, FastAPI |
+| Data Layer | SQLite, SQLAlchemy |
+| Authentication | JWT-based authentication |
+| Developer Tools | Git, GitHub, VS Code |
 
 ---
 
-## 🛠️ Technology Stack
-
-### Frontend
-<p>
-  <img src="https://skillicons.dev/icons?i=react,vite,js,html,css" />
-</p>
-
-- React.js
-- Vite
-- JavaScript
-- HTML5
-- CSS3
-
-### Backend
-<p>
-  <img src="https://skillicons.dev/icons?i=python,fastapi" />
-</p>
-
-- Python 3.11
-- FastAPI
-- REST API
-- JWT-based authentication
-
-### Database & Development Tools
-<p>
-  <img src="https://skillicons.dev/icons?i=sqlite,git,github,vscode" />
-</p>
-
-- SQLite
-- SQLAlchemy
-- Git & GitHub
-- Visual Studio Code
-
----
-
-## 🏗️ System Architecture
-
-AttendX follows a client-server architecture.
+## ◈ Under the Hood
 
 ```text
-             ┌─────────────────────────┐
-             │       React Frontend    │
-             │       (Vite + JS)       │
-             └────────────┬────────────┘
-                          │
-                    HTTP / REST API
-                          │
-             ┌────────────▼────────────┐
-             │      FastAPI Backend    │
-             │                         │
-             │  Authentication         │
-             │  Attendance Management  │
-             │  Student Management     │
-             │  Faculty Management     │
-             │  Analytics & Reports    │
-             └────────────┬────────────┘
-                          │
-             ┌────────────▼────────────┐
-             │       SQLite DB         │
-             │                         │
-             │  Users & Roles          │
-             │  Attendance Records     │
-             │  Student Information    │
-             │  Campus Data            │
-             └─────────────────────────┘
+       ┌──────────────────────────┐
+       │       USER INTERFACE     │
+       │       React + Vite       │
+       └────────────┬─────────────┘
+                    │
+                    ▼
+       ┌──────────────────────────┐
+       │       REST API LAYER     │
+       │         FastAPI          │
+       └────────────┬─────────────┘
+                    │
+          ┌─────────┼─────────┐
+          ▼         ▼         ▼
+       Auth      Attendance  Campus
+       Module     Module    Modules
+          │         │         │
+          └─────────┼─────────┘
+                    ▼
+       ┌──────────────────────────┐
+       │       DATA LAYER         │
+       │         SQLite           │
+       └──────────────────────────┘
 ```
 
 ---
 
-## 📂 Project Structure
+## ◈ Get It Running
 
-```text
-AttendX/
-│
-├── backend/
-│   ├── main.py
-│   ├── database.py
-│   ├── models.py
-│   ├── schemas.py
-│   ├── student_registry.py
-│   ├── requirements.txt
-│   └── .env.example
-│
-├── frontend/
-│   ├── src/
-│   │   ├── main.jsx
-│   │   └── style.css
-│   ├── index.html
-│   ├── package.json
-│   └── package-lock.json
-│
-├── .gitignore
-├── README.md
-├── setup_windows.bat
-└── start_attendx.bat
-```
+**Requirements:** Python 3.11, Node.js and npm.
 
----
-
-## ⚙️ Installation & Setup
-
-### Prerequisites
-
-Make sure you have installed:
-
-- Python 3.11
-- Node.js and npm
-- Git
-
-### 1. Clone the Repository
+**1 — Clone**
 
 ```bash
 git clone https://github.com/kishoreb13/AttendX.git
 cd AttendX
 ```
 
-### 2. Setup Backend
+**2 — Start the backend**
 
 ```bash
 cd backend
 python -m venv .venv
 ```
 
-Activate the virtual environment.
-
-**Windows PowerShell:**
+Windows PowerShell:
 
 ```powershell
 .\.venv\Scripts\Activate.ps1
 ```
 
-Install dependencies:
+Install and run:
 
 ```bash
 pip install -r requirements.txt
-```
-
-Start the FastAPI server:
-
-```bash
 python -m uvicorn main:app --reload --host 127.0.0.1 --port 8000
 ```
 
-Backend URL:
+**3 — Start the frontend**
 
-`http://127.0.0.1:8000`
-
-API Documentation:
-
-`http://127.0.0.1:8000/docs`
-
-### 3. Setup Frontend
-
-Open a new terminal:
+Open another terminal:
 
 ```bash
 cd frontend
@@ -218,50 +161,59 @@ npm install
 npm run dev
 ```
 
-Frontend URL:
+**4 — Launch**
 
-`http://localhost:5173`
-
-### 4. Access AttendX
-
-Open the frontend URL in your browser and access the application.
-
----
-
-## 🔄 Application Workflow
-
-1. Users access the platform through the frontend.
-2. Authentication identifies the user's role and permissions.
-3. Faculty members manage attendance sessions.
-4. Students participate in attendance workflows.
-5. Attendance records are stored in the database.
-6. Administrators and faculty can review attendance information and reports.
+| Service | Address |
+|---|---|
+| AttendX Frontend | http://localhost:5173 |
+| Backend API | http://127.0.0.1:8000 |
+| Swagger Documentation | http://127.0.0.1:8000/docs |
 
 ---
 
-## 🔮 Future Enhancements
+## ◈ Repository Map
 
-- 📸 Advanced QR scanning with camera integration.
-- 🤖 AI-powered attendance insights and predictive analytics.
-- ☁️ Cloud deployment and scalable database integration.
-- 📱 Mobile application support.
-- 🔔 Real-time notifications and alerts.
-- 📈 Advanced student performance analytics.
+```text
+AttendX/
+├── backend/
+│   ├── main.py
+│   ├── database.py
+│   ├── models.py
+│   ├── schemas.py
+│   ├── student_registry.py
+│   └── requirements.txt
+│
+├── frontend/
+│   ├── src/
+│   │   ├── main.jsx
+│   │   └── style.css
+│   ├── package.json
+│   └── index.html
+│
+├── README.md
+├── .gitignore
+├── setup_windows.bat
+└── start_attendx.bat
+```
 
 ---
 
-## 👨‍💻 Developed By
+## ◈ The Road Ahead
+
+The next evolution of AttendX could include:
+
+- Intelligent attendance pattern analysis
+- Advanced camera-based QR scanning
+- Cloud-hosted deployment
+- Mobile-first campus experience
+- Real-time alerts and notifications
+
+---
 
 <p align="center">
-  <b>AttendX — Smart Campus Attendance Management System</b>
-  <br/>
-  Developed with ❤️ using React, FastAPI and SQLite.
+  <b>Designed to simplify the everyday campus experience.</b>
   <br/><br/>
-  <a href="https://github.com/kishoreb13">
-    <img src="https://img.shields.io/badge/GitHub-kishoreb13-181717?style=for-the-badge&logo=github" />
-  </a>
-</p>
-
-<p align="center">
-  ⭐ If you find this project interesting, consider giving it a star!
+  <a href="https://github.com/kishoreb13">Developer · GitHub</a>
+  <br/>
+  <sub>AttendX | Smart Campus Attendance Management System</sub>
 </p>
