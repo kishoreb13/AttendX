@@ -374,21 +374,21 @@ npm run dev
 <table>
 <tr>
 <td width="50%" align="center">
-<img src="docs/screenshots/dashboard.png" width="100%" alt="Dashboard screenshot placeholder"/>
+<img src="docs/screenshots/dashboard.png" width="100%"/>
 <b>01 — Dashboard</b>
 </td>
 <td width="50%" align="center">
-<img src="docs/screenshots/attendance.png" width="100%" alt="Attendance screenshot placeholder"/>
+<img src="docs/screenshots/attendance.png" width="100%"/>
 <b>02 — Attendance Management</b>
 </td>
 </tr>
 <tr>
 <td width="50%" align="center">
-<img src="docs/screenshots/students.png" width="100%" alt="Student management screenshot placeholder"/>
+<img src="docs/screenshots/students.png" width="100%"/>
 <b>03 — Student Management</b>
 </td>
 <td width="50%" align="center">
-<img src="docs/screenshots/analytics.png" width="100%" alt="Analytics screenshot placeholder"/>
+<img src="docs/screenshots/analytics.png" width="100%"/>
 <b>04 — Attendance Analytics</b>
 </td>
 </tr>
