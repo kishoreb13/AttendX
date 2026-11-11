@@ -370,8 +370,6 @@ npm run dev
 <p align="center">
   <b>THE INTERFACE IN ACTION</b>
   <br/>
-  <i>Replace these placeholders with actual screenshots from the running application.</i>
-</p>
 
 <table>
 <tr>
