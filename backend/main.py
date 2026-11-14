@@ -12,11 +12,21 @@ from schemas import LoginInput, UserCreate, StudentRegister, CourseCreate, Sessi
 from student_registry import RegistrySession, StudentRegistration
 from fastapi.middleware.cors import CORSMiddleware
 
+
 SECRET_KEY = "CHANGE_THIS_SECRET_BEFORE_DEPLOYMENT_2026"
 ALGORITHM = "HS256"
 pwd = CryptContext(schemes=["bcrypt"], deprecated="auto")
 app = FastAPI(title="AttendX API", version="1.0.0", description="Smart Campus Attendance Management API")
 app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:5173",
+        "https://attend-x-ruddy.vercel.app",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
