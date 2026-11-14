@@ -15,8 +15,16 @@ SECRET_KEY = "CHANGE_THIS_SECRET_BEFORE_DEPLOYMENT_2026"
 ALGORITHM = "HS256"
 pwd = CryptContext(schemes=["bcrypt"], deprecated="auto")
 app = FastAPI(title="AttendX API", version="1.0.0", description="Smart Campus Attendance Management API")
-app.add_middleware(CORSMiddleware, allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"], allow_credentials=True, allow_methods=["*"], allow_headers=["*"])
-Base.metadata.create_all(bind=engine)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=allow_origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+), allow_origins = [
+    "http://localhost:5173",
+    "https://attend-x-ruddy.vercel.app",
+]
 
 def seed():
     db = SessionLocal()
