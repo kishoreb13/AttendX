@@ -4,7 +4,7 @@ import {createRoot} from 'react-dom/client';
 import {LayoutDashboard,Users,BookOpen,ClipboardCheck,BarChart3,ShieldCheck,LogOut,Plus,RefreshCw,QrCode,Clock,Search,Download,Menu,X,GraduationCap,Activity} from 'lucide-react';
 import {BarChart,Bar,XAxis,YAxis,Tooltip,ResponsiveContainer,CartesianGrid} from 'recharts';
 import './style.css';
-const API='http://127.0.0.1:8000/api';
+const API='https://attendx-backend-new.onrender.com/api';
 function App(){
  const [authMode,setAuthMode]=useState('login'); const [token,setToken]=useState(localStorage.getItem('attendx_token')||''); const [user,setUser]=useState(JSON.parse(localStorage.getItem('attendx_user')||'null')); const [page,setPage]=useState('Overview'); const [stats,setStats]=useState({}); const [users,setUsers]=useState([]); const [faculty,setFaculty]=useState([]); const [courses,setCourses]=useState([]); const [records,setRecords]=useState([]); const [summary,setSummary]=useState([]); const [audit,setAudit]=useState([]); const [error,setError]=useState(''); const [notice,setNotice]=useState(''); const [loading,setLoading]=useState(false); const [session,setSession]=useState(null); const [mobile,setMobile]=useState(false); const [timetable,setTimetable]=useState([]); const [leaves,setLeaves]=useState([]); const [announcements,setAnnouncements]=useState([]); const [defaulters,setDefaulters]=useState([]);
  const headers=()=>({'Content-Type':'application/json',Authorization:`Bearer ${token}`});
