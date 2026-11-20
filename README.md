@@ -359,9 +359,9 @@ npm run dev
 
 | Component | Local Address |
 |---|---|
-| Frontend | http://localhost:5173 |
-| Backend | http://127.0.0.1:8000 |
-| Swagger API Documentation | http://127.0.0.1:8000/docs |
+| Frontend | [http://localhost:5173](https://attend-x-ruddy.vercel.app/) |
+| Backend | [http://127.0.0.1:8000](https://attendx-backend-new.onrender.com) |
+| Swagger API Documentation | [http://127.0.0.1:8000/docs](https://attendx-backend-new.onrender.com/docs) |
 
 ---
 
