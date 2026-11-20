@@ -1,3 +1,4 @@
+
 from fastapi import FastAPI, Depends, HTTPException, Header
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session, joinedload
@@ -6,27 +7,20 @@ from datetime import datetime, timedelta
 from jose import jwt, JWTError
 from passlib.context import CryptContext
 import secrets, qrcode, io, base64
+
 from database import Base, engine, get_db, SessionLocal
 from models import User, Course, AttendanceSession, Attendance, AuditLog, TimetableEntry, LeaveRequest, Announcement
 from schemas import LoginInput, UserCreate, StudentRegister, CourseCreate, SessionCreate, ManualAttendance, TimetableCreate, LeaveCreate, LeaveReview, AnnouncementCreate
 from student_registry import RegistrySession, StudentRegistration
-from fastapi.middleware.cors import CORSMiddleware
-
 
 SECRET_KEY = "CHANGE_THIS_SECRET_BEFORE_DEPLOYMENT_2026"
 ALGORITHM = "HS256"
 pwd = CryptContext(schemes=["bcrypt"], deprecated="auto")
+
 app = FastAPI(title="AttendX API", version="1.0.0", description="Smart Campus Attendance Management API")
+
+# Corrected CORS configuration
 app.add_middleware(
-    CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",
-        "https://attend-x-ruddy.vercel.app",
-    ],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
@@ -36,16 +30,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-), allow_origins = [
-    "http://localhost:5173",
-    "https://attend-x-ruddy.vercel.app",
-]
 
 def seed():
     db = SessionLocal()
@@ -54,6 +38,7 @@ def seed():
             db.add(User(name="System Administrator", email="admin@attendx.edu", password_hash=pwd.hash("Admin@123"), role="admin", department="Administration"))
             db.commit()
     finally: db.close()
+
 seed()
 
 def token_for(user):
@@ -105,7 +90,6 @@ def register_student(data: StudentRegister, db: Session = Depends(get_db)):
         raise HTTPException(409, "An account with this email already exists")
     if db.query(User).filter(func.upper(User.roll_no) == roll_no).first():
         raise HTTPException(409, "This roll number is already registered")
-
     registry = RegistrySession()
     created_user = None
     try:
@@ -131,7 +115,6 @@ def register_student(data: StudentRegister, db: Session = Depends(get_db)):
         raise HTTPException(500, "Could not complete registration. Please try again.")
     finally:
         registry.close()
-
 
 @app.get("/api/auth/me")
 def me(user=Depends(current_user)):
@@ -242,8 +225,8 @@ def audit(db:Session=Depends(get_db),actor=Depends(allow("admin"))):
     rows=db.query(AuditLog).order_by(AuditLog.created_at.desc()).limit(100).all()
     return [{"id":r.id,"actor_id":r.actor_id,"action":r.action,"detail":r.detail,"created_at":r.created_at.isoformat()} for r in rows]
 
-
 # ---- Extended academic operations ----
+
 @app.get("/api/sessions")
 def list_sessions(db: Session = Depends(get_db), actor=Depends(current_user)):
     q = db.query(AttendanceSession).options(joinedload(AttendanceSession.course))
